@@ -17,6 +17,9 @@ vector<int> dijkstra(vector<vector<int>> &vec, int n, int e, int src) {
         pq.pop();
         int node=u.second;
         int dist=u.first;
+        if(dp[node]<dist){
+            continue;
+        }
         for(int i=0;i<adj[u.second].size();i++){
             int curr=adj[u.second][i].first;
             int d=adj[u.second][i].second;
